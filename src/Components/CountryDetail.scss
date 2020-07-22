@@ -1,0 +1,54 @@
+.CountryDetail {
+  box-sizing: border-box;
+  margin-top: 6rem;
+  width: 100vw;
+  padding: 2rem;
+  color: var(--textColor);
+  transition: color 250ms ease-in, background-color 250ms ease-in;
+  &-BackButton {
+    text-align: center;
+    width: 7rem;
+    height: 2rem;
+    border: none;
+    color: var(--textColor);
+    background-color: var(--elementColor);
+    box-shadow: 0 0 12px 3px rgba(0,0,0,0.15);
+    transition: color 250ms ease-in, background-color 250ms ease-in;
+  }
+  &-Flag {
+    width: 100%;
+    margin-top: 3rem;
+  }
+  &-Info {
+    margin-top: 2rem;
+    &-Block {
+      margin-bottom: 2rem;
+    }
+    &-Text {
+      display: block;
+      margin: 1rem 0 1rem 0;
+    }
+    &-TextLabel {
+      font-weight: 600;
+    }
+    &-BordersHeading {
+      display: block;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    &-Borders {
+      display: inline-block;
+      width: 100%;
+      &-Button {
+        width: 5.65rem;
+        height: 2rem;
+        margin: 0.4rem;
+        border: none;
+        color: var(--textColor);
+        background-color: var(--elementColor);
+        box-shadow: 0 0 3px 1px rgba(0,0,0,0.1);
+        transition: color 250ms ease-in, background-color 250ms ease-in;
+      }
+    }
+  }
+}

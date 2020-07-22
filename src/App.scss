@@ -1,0 +1,125 @@
+:root {
+  --DarkBlue: hsl(209, 23%, 22%);
+  --VeryDarkBlue: hsl(207, 26%, 17%);
+  --White: hsl(0, 0%, 100%);
+
+  --VeryDarkerBlue: hsl(200, 15%, 8%);
+  --DarkGray: hsl(0, 0%, 52%);
+  --VeryLightGray: hsl(0, 0%, 98%);
+}
+
+.DarkMode {
+  --bgColor: var(--VeryDarkBlue);
+  --elementColor: var(--DarkBlue);
+  --inputTextColor: var(--White);
+  --textColor: var(--White);
+  background-color: var(--bgColor);
+}
+
+.LightMode {
+  --bgColor: var(--VeryLightGray);
+  --elementColor: var(--White);
+  --inputTextColor: var(--DarkGray);
+  --textColor: var(--VeryDarkerBlue);
+  background-color: var(--bgColor);
+}
+
+.App {
+  background-color: var(--bgColor);
+  transition: background-color 250ms ease-in;
+}
+
+.Navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 6rem;
+  background-color: var(--elementColor);
+  box-shadow: 0 0 12px 3px rgba(0,0,0,0.05);
+  transition: background-color 250ms ease-in;
+  z-index: 999;
+  &-Title {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 6rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    padding: 2rem 0 2rem 1.5rem;
+    margin: 0;
+    color: var(--textColor);
+    transition: color 250ms ease-in;
+  }
+  &-Button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 6rem;
+    padding: 2rem 1.5rem 2rem 1.5rem;
+    margin: 0;
+    background: none;
+    border: none;
+    color: var(--textColor);
+    transition: color 250ms ease-in;
+  }
+}
+
+.Search-n-Filter {
+  text-align: left;
+  margin-top: 6rem;
+  padding: 1rem;
+}
+
+.SearchBar {
+  width: 100%;
+  height: 3.5rem;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+  padding: 0 0 0 3rem;
+  margin: 1rem 0 1rem 0;
+  box-shadow: 0 0 12px 3px rgba(0,0,0,0.05);
+  background-color: var(--elementColor);
+  color: var(--inputTextColor);
+  transition: background-color 250ms ease-in, color 250ms ease-in;
+  &::placeholder {
+    color: var(--inputTextColor);
+    transition: color 250ms ease-in;
+  }
+}
+
+.Filter {
+  width: 60%;
+  height: 3.5rem;
+  box-sizing: border-box;
+  padding: 1rem 2rem 1rem 2rem;
+  margin: 1.25rem 0 1.25rem 0;
+  line-height: 1.5rem;
+  background-color: var(--elementColor);
+  color: var(--textColor);
+  border-radius: 5px;
+  box-shadow: 0 0 12px 3px rgba(0,0,0,0.05);
+  transition: background-color 250ms ease-in, color 250ms ease-in;
+  &-Dropdown {
+    position: absolute;
+    transform: translate(-2rem, 1.5rem);
+    box-sizing: border-box;
+    width: 55%;
+    padding: 1rem 2rem;
+    line-height: 1.75rem;
+    background-color: var(--elementColor);
+    color: var(--textColor);
+    border-radius: 5px;
+    box-shadow: 0 0 12px 3px rgba(0,0,0,0.05);
+    transition: background-color 250ms ease-in, color 250ms ease-in;
+  }
+}
+
+.Content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 3rem;
+  margin-top: -2rem;
+  padding: 2rem;
+  text-align: center;
+}

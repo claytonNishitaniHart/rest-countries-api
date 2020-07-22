@@ -1,0 +1,26 @@
+.Card {
+  height: 400px;
+  background-color: var(--elementColor);
+  border-radius: 10px;
+  text-align: left;
+  color: var(--textColor);
+  box-shadow: 0 0 12px 3px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: background-color 250ms ease-in, color 250ms ease-in;
+  &-Flag {
+    width: 100%;
+    height: 200px;
+  }
+  &-Info {
+    padding: 1rem 2rem 1rem 2rem;
+    &-Name {
+      margin: 0 0 1.5rem 0;
+    }
+    &-Text {
+      display: block;
+    }
+    &-TextLabel {
+      font-weight: 600;
+    }
+  }
+}
