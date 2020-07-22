@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import CountryCard from "./Components/CountryCard";
 import CountryDetail from "./Components/CountryDetail";
 import './App.scss';
+import {FaMoon, FaSearch, FaChevronDown} from 'react-icons/fa';
+
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -104,6 +106,7 @@ const App = () => {
       <div className={"Main"}>
         <div className={"Search-n-Filter"}>
           <form>
+            <FaSearch className={"Search-n-Filter-SearchIcon"}/>
             <input
               className={"SearchBar"}
               type={'text'}
@@ -113,7 +116,7 @@ const App = () => {
             />
           </form>
           <div className={"Filter"} onClick={() => setShowFilter(!showFilter)}>
-            {FilterDropdownText}
+            {FilterDropdownText}<FaChevronDown className={"Filter-Chevron"}/>
             {FilterDropdown}
           </div>
         </div>
@@ -130,7 +133,7 @@ const App = () => {
     <div className={"App"}>
       <div className={"Navbar"}>
         <h2 className={"Navbar-Title"}>Where in the world?</h2>
-        <button className={"Navbar-Button"} onClick={() => setDarkMode(!darkMode)}>Dark Mode</button>
+        <button className={"Navbar-Button"} onClick={() => setDarkMode(!darkMode)}><FaMoon className={"Navbar-Button-Moon"}/> Dark Mode</button>
       </div>
       {Screen}
     </div>

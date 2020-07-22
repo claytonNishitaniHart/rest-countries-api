@@ -1,5 +1,6 @@
 import React from 'react';
 import "./CountryDetail.scss";
+import {FaLongArrowAltLeft} from 'react-icons/fa';
 
 const CountryDetail = ({flipShowDetail, getCountryNameFromCode, flag, name, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages, borders}) => {
   let CurrenciesText = "";
@@ -38,7 +39,7 @@ const CountryDetail = ({flipShowDetail, getCountryNameFromCode, flag, name, nati
   
   return(
     <div className={"CountryDetail"}>
-      <button className={"CountryDetail-BackButton"} onClick={() => flipShowDetail("")}>Back</button>
+      <button className={"CountryDetail-BackButton"} onClick={() => flipShowDetail("")}><FaLongArrowAltLeft className={"CountryDetail-BackButton-Icon"}/> Back</button>
       <img className={"CountryDetail-Flag"} src={flag} alt={"flag"}/>
       <div className={"CountryDetail-Info"}>
         <h2 className={"CountryDetail-Info-Name"}>{name}</h2>

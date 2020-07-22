@@ -14,6 +14,9 @@
     background-color: var(--elementColor);
     box-shadow: 0 0 12px 3px rgba(0,0,0,0.15);
     transition: color 250ms ease-in, background-color 250ms ease-in;
+    &-Icon {
+      transform: translate(-2px, 2px);
+    }
   }
   &-Flag {
     width: 100%;

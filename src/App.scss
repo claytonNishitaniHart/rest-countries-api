@@ -61,6 +61,9 @@
     border: none;
     color: var(--textColor);
     transition: color 250ms ease-in;
+    &-Moon {
+      transform: translateY(2px);
+    }
   }
 }
 
@@ -68,6 +71,14 @@
   text-align: left;
   margin-top: 6rem;
   padding: 1rem;
+  &-SearchIcon {
+    position: absolute;
+    height: 3.5rem;
+    margin: 1rem 0 1rem 0;
+    padding: 0 0 0 1.1rem;
+    color: var(--inputTextColor);
+    transition: color 250ms ease-in;
+  }
 }
 
 .SearchBar {
@@ -89,6 +100,7 @@
 }
 
 .Filter {
+  position: relative;
   width: 60%;
   height: 3.5rem;
   box-sizing: border-box;
@@ -104,7 +116,7 @@
     position: absolute;
     transform: translate(-2rem, 1.5rem);
     box-sizing: border-box;
-    width: 55%;
+    width: 100%;
     padding: 1rem 2rem;
     line-height: 1.75rem;
     background-color: var(--elementColor);
@@ -112,6 +124,14 @@
     border-radius: 5px;
     box-shadow: 0 0 12px 3px rgba(0,0,0,0.05);
     transition: background-color 250ms ease-in, color 250ms ease-in;
+  }
+  &-Chevron {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 3.5rem;
+    line-height: 1.5rem;
+    padding-right: 1rem;
   }
 }
 
