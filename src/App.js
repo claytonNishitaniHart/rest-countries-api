@@ -32,16 +32,26 @@ const App = () => {
     .then(result => result.json())
     .then(response => {
       setAllCountries(response);
-      if (filterRegion) {
-        setItems(response.filter((item) => {
-          return(item.region === filterRegion);
-        }))
-      } else {
-        setItems(response);
-      }
+      setItems(response);
     })
     .catch(error => console.log("there was an error"))
-  }, [query, filterRegion])
+  }, [])
+  
+  useEffect(() => {
+    setItems(allCountries.filter(item => {
+      return (item.region === filterRegion);
+    }));
+  }, [filterRegion])
+  
+  useEffect(() => {
+    if (!query) {
+      setItems(allCountries);
+    } else {
+      setItems(allCountries.filter(item => {
+        return (item.name.toLowerCase().includes(query.toLowerCase()));
+      }));
+    }
+  }, [query])
   
   useEffect(() => {
     if (detailCountry !== "") {
@@ -114,11 +124,11 @@ const App = () => {
               value={query}
               onChange={(event) => {setQuery(event.target.value)}}
             />
+            <div className={"Filter"} onClick={() => setShowFilter(!showFilter)}>
+              {FilterDropdownText}<FaChevronDown className={"Filter-Chevron"}/>
+              {FilterDropdown}
+            </div>
           </form>
-          <div className={"Filter"} onClick={() => setShowFilter(!showFilter)}>
-            {FilterDropdownText}<FaChevronDown className={"Filter-Chevron"}/>
-            {FilterDropdown}
-          </div>
         </div>
         <div className={"Content"}>
           {items.map((item, index) => {

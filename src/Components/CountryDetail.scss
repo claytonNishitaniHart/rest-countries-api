@@ -1,4 +1,17 @@
+@mixin breakpoint($point) {
+  @if ($point == "phone") {
+    @media (max-width: 600px) { @content; }
+  }
+  @else if ($point == "tablet") {
+    @media (min-width: 600px) { @content; }
+  }
+  @else if ($point == "desktop") {
+    @media (min-width: 1250px) { @content; }
+  }
+}
+
 .CountryDetail {
+  position: relative;
   box-sizing: border-box;
   margin-top: 6rem;
   width: 100vw;
@@ -6,6 +19,9 @@
   color: var(--textColor);
   transition: color 250ms ease-in, background-color 250ms ease-in;
   &-BackButton {
+    @include breakpoint(desktop) {
+      display: block;
+    }
     text-align: center;
     width: 7rem;
     height: 2rem;
@@ -21,10 +37,26 @@
   &-Flag {
     width: 100%;
     margin-top: 3rem;
+    @include breakpoint(desktop) {
+      width: 40rem;
+    }
   }
   &-Info {
+    @include breakpoint(desktop) {
+      position: absolute;
+      top: 12rem;
+      transform: translateY(-3rem);
+      display: inline-block;
+      margin: 0 0 0 5rem;
+    }
     margin-top: 2rem;
     &-Block {
+      @include breakpoint(desktop) {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 5rem 2rem 0;
+      }
       margin-bottom: 2rem;
     }
     &-Text {

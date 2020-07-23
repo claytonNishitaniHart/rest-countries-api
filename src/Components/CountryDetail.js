@@ -16,6 +16,12 @@ const CountryDetail = ({flipShowDetail, getCountryNameFromCode, flag, name, nati
   LanguagesText = LanguagesText.substr(0, LanguagesText.length - 2);
   
   function truncateName(str) {
+    console.log(str);
+    
+    if(!str) {
+      return '';
+    }
+    
     if (str.length <= 12) {
       return str;
     }
